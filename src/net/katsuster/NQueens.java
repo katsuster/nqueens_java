@@ -41,7 +41,7 @@ public class NQueens {
 
         answer = 0;
         for (x = 0; x < center; x++) {
-            //左半分を数える
+            //left half
             row = 1 << x;
             left = row << 1;
             right = row >> 1;
@@ -58,7 +58,7 @@ public class NQueens {
         solverRemain = null;
         solverRemainThread = null;
         if (n % 2 == 1) {
-            //奇数の場合は中央を数える
+            //center(if N is odd)
             row = 1 << center;
             left = row << 1;
             right = row >> 1;
