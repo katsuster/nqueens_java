@@ -36,8 +36,8 @@ public class NQueens {
 
         //solve
         center = n >>> 1;
-        solvers = new Solver[n >>> 1];
-        solverThreads = new Thread[n >>> 1];
+        solvers = new Solver[center];
+        solverThreads = new Thread[center];
 
         answer = 0;
         for (x = 0; x < center; x++) {
