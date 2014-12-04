@@ -40,7 +40,17 @@ public class NQueens {
         solverThreads = new Thread[center];
 
         answer = 0;
-        for (x = 0; x < center; x++) {
+
+        //first
+        solvers[0] = new Solver(0, 1, 0, n - 1, 0, 0);
+        solverThreads[0] = new Thread(solvers[0]);
+        if (parallel) {
+            solverThreads[0].start();
+        } else {
+            solverThreads[0].run();
+        }
+
+        for (x = 1; x < center; x++) {
             //left half
             row = 1 << x;
             left = row << 1;
